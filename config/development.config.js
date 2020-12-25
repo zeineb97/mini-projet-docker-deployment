@@ -1,3 +1,6 @@
 module.exports = {
-    url: 'mongodb+srv://mini-projet-docker-deployment:HKfzai357159@cluster0.uwwif.mongodb.net/mini-projet-docker?retryWrites=true&w=majority'
+    url: 'mongodb://127.0.0.1:27017/', 
+    username: 'root',
+    password : 'root'
+    
 }

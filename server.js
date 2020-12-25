@@ -17,8 +17,10 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
-mongoose.connect(dbConfig.url, {
-    useNewUrlParser: true
+mongoose.connect(dbConfig.url,  {
+    useNewUrlParser: true, 
+   user: dbConfig.username,  
+   pass : dbConfig.password
 }).then(() => {
     console.log("Successfully connected to the mini-project database");
 }).catch(err => {
@@ -26,10 +28,9 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
-// define a simple route
-app.get('/', (req, res) => {
-    res.json({"message": "Welcome to mini-project application."});
-});
+
+
+
 
 require('./app/routes/book.routes.js')(app);
 
